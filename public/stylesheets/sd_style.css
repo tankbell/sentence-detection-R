@@ -1,0 +1,120 @@
+.inner-container{
+  width:400px;
+  height:500px;
+  position: absolute;
+  margin-top: 50px;
+  top:50%;
+  left:50%;
+  margin: -100px 0 0 -200px;
+  overflow :auto;
+  border: 10px solid #6f2da8;
+  border-radius: 25px 25px 25px 25px;
+}
+
+#fieldset{
+border: none;
+}
+
+.box{
+  position:absolute;
+  height:100%;
+  width:100%;
+  font-family:"Varela Round", sans-serif;
+  color:#fff;
+  background:rgba(255,255,255, 0.9);
+  padding:30px 0px;
+  text-align: center;
+}
+
+.box h1{
+  text-align:center;
+  margin:0 0;
+  font-size:30px;
+  font-weight: bold;
+  color: #fff;
+  background: #6f2da8;
+}
+
+.box p{
+  font-size:14px;
+  text-align:center;
+  color:#EE82EE;
+  margin-top: 15px;
+}
+
+#submit-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #6f2da8;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+#submit-button:hover {background-color: #4b0082}
+
+#submit-button:active {
+  background-color: #4b0082;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+.floated {
+  display:inline-block;
+  margin-right:5px;
+}
+
+.tooltip {
+	display:none;
+	position:absolute;
+	border:1px solid #333;
+	background-color:#161616;
+	border-radius:5px;
+	padding:10px;
+	color:#fff;
+	font-size:12px Arial;
+}
+
+.flegend {
+  color: #6f2da8;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  align: center;
+  border-bottom: 0.5px solid #6f2da8;
+}
+
+#cancel-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #FF1A00;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+#cancel-button:hover {background-color: #800000}
+
+#cancel-button:active {
+  background-color: #800000;
+  box-shadow: none;
+  transform: translateY(4px);
+}
