@@ -1,0 +1,18 @@
+{
+  "name": "sentence-detection",
+  "version": "1.0.0",
+  "description": "Sentence Detection",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ram Kulathumani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
