@@ -1,7 +1,6 @@
 module.exports = function(app) {
   var OpenNLPSentenceDetector = require('./OpenNLPSD.js').OpenNLPSentenceDetector;
   var openSD = new OpenNLPSentenceDetector();
-  //var openNLP = require("opennlp");
 
   app.get('/', function(req,res) {
     res.render('pages/sentDetect');
