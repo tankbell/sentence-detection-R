@@ -69,10 +69,10 @@
           <textarea style="font-size:25px"
                     id = "msg"
                     name = "msg"
-                    rows="5" cols="75">
-                    
+                    rows="5" cols="75" readonly>
+                    The following sentences were identified(Please Scroll) :
                     <% for(var i=0; i < sentences.length; i++) { %>
-                       <%=sentences[i]%>
+                       (<%=i+1%>) <%=sentences[i]%>
                     <% } %>
           </textarea>
           <!--<table style="font-size:25px">
