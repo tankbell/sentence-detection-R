@@ -8,7 +8,7 @@ OpenNLPSentenceDetector.prototype.detect = function(alg,
    //console.log("OSD " + alg);
    var sent = para;
    var sentenceDetector = new openNLP().sentenceDetector;
-   sentenceDetector.sentDetect(sentence, function(err, results) {
+   sentenceDetector.sentDetect(para, function(err, results) {
       console.log(results);
     });
 };
