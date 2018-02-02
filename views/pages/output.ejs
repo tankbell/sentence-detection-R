@@ -47,16 +47,18 @@
   </div>
 
   <div class="container" style="height: 1800px;">
-    <div class="row">
-  		<div class="span9 offset2">
+    <!--<div class="row">
+  		<div class="span9 offset4">
   		<div class="page-header">
   				<h1>
   				 Sentence Detection
   			</h1>
   		</div>
   		</div>
-  	</div>
+  	</div>-->
 
+    <br></br>
+    <br></br>
     <div class="row">
      <div class="span9 offset1">
 
@@ -68,7 +70,18 @@
                     id = "msg"
                     name = "msg"
                     rows="5" cols="75">
+                    
+                    <% for(var i=0; i < sentences.length; i++) { %>
+                       <%=sentences[i]%>
+                    <% } %>
           </textarea>
+          <!--<table style="font-size:25px">
+            <% for(var i=0; i < sentences.length; i++) { %>
+                  <tr>
+                    <th><%=sentences[i]%></th>
+                  </tr>
+            <% } %>
+          </table>-->
         </p>
 
         <p><a style="margin-left: 50%" id="cancel-button" href="/goback">Go Back</a></p>

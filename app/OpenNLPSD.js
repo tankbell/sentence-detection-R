@@ -9,7 +9,11 @@ OpenNLPSentenceDetector.prototype.detect = function(alg,
    var sent = para;
    var sentenceDetector = new openNLP().sentenceDetector;
    sentenceDetector.sentDetect(para, function(err, results) {
-      console.log(results);
+      for (i = 0; i < results.length; i++) {
+          results[i] = results[i].replace(/(\r\n|\n|\r)/gm," ");
+          results[i] = results[i].replace(/\s+/g," ");
+      }
+      callback(null, results);
     });
 };
 

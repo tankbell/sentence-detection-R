@@ -23,7 +23,9 @@ module.exports = function(app) {
       if (err) {
         res.send("Server Error");
       } else {
-        res.render('pages/output');
+        res.render('pages/output', {
+          sentences : data
+        });
       }
     });
 
