@@ -44,7 +44,7 @@ border: none;
 
 #submit-button {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 10px 25px;
   font-size: 24px;
   font-family: "Varela Round", sans-serif;
   font-weight: bold;
@@ -52,18 +52,24 @@ border: none;
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #6f2da8;
+  /*color: #fff;*/
+  color:#221f1f;
+  /*background-color: #6f2da8;*/
+  background-color: #e50914;
   border: none;
   border-radius: 15px;
   box-shadow: none;
   margin-bottom: 15px;
 }
 
-#submit-button:hover {background-color: #4b0082}
+#submit-button:hover {
+  /*background-color: #4b0082*/
+  background-color: #e50914
+}
 
 #submit-button:active {
-  background-color: #4b0082;
+  /*background-color: #4b0082;*/
+  background-color: #e50914;
   box-shadow: none;
   transform: translateY(4px);
 }
@@ -95,7 +101,7 @@ border: none;
 
 #cancel-button {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 12px 25px;
   font-size: 24px;
   font-family: "Varela Round", sans-serif;
   font-weight: bold;
@@ -104,17 +110,17 @@ border: none;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #FF1A00;
+  background-color: #221f1f;
   border: none;
   border-radius: 15px;
   box-shadow: none;
   margin-bottom: 15px;
 }
 
-#cancel-button:hover {background-color: #800000}
+#cancel-button:hover {background-color: #221f1f}
 
 #cancel-button:active {
-  background-color: #800000;
+  background-color: #221f1f;
   box-shadow: none;
   transform: translateY(4px);
 }

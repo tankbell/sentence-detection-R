@@ -62,21 +62,17 @@
 
         <br></br>
         <br></br>
-        <form action="/sentDetect" method="post">
-        <fieldset id="fieldset">
-        <p>
-          <select style="height:50px;width:150px;font-size:25px" id="algotype" name="algotype" title="Choose the algorithm for sentence detection">
-              <option value="Open_NLP">OpenNLP</option>
-              <option value="Rule_Based">RuleBased</option>
-          </select>
-        </p>
-        <p><textarea style="font-size:25px" id = "msg" name = "msg" rows="5" cols="75" placeholder="Enter your text here" title="Customize your text"></textarea></p>
-        </fieldset>
 
-        <input style="margin-left: 50%" id="submit-button" type="submit" value="Submit">
-        <p><a style="margin-left: 50%" id="cancel-button" href="/cancel">Cancel</a></p>
+        <p>
+          <textarea style="font-size:25px"
+                    id = "msg"
+                    name = "msg"
+                    rows="5" cols="75">
+          </textarea>
+        </p>
+
+        <p><a style="margin-left: 50%" id="cancel-button" href="/goback">Go Back</a></p>
       </div>
-    </form>
      </div>
   </div>
 
