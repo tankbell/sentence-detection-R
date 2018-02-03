@@ -99,6 +99,7 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
          // Check if the next word starts with an upper case letter.
          // Most likely this word is the end of the sentence.
          var next = tokens[i+1];
+         //Decimal Numbers.
          if (!isNaN(next)) {
            continue;
          }
