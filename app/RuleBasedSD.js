@@ -1,4 +1,6 @@
 var abbr = require('./abbreviations.js').abbr;
+var pos = require('pos');
+var tagger = new pos.Tagger();
 
 var RuleBasedSentenceDetector = function() {};
 
@@ -42,6 +44,25 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
    var tokens = para.trim().match(/\S+|\n/g);
 
    console.log(tokens);
+   var w = "";
+   for (i = 0; i < tokens.length ; i++) {
+     w = w + tokens[i] + ' ';
+   }
+   //console.log("words " + w);
+   var j = 0;
+   var posArray = [];
+   var words = new pos.Lexer().lex(w);
+   var taggedWords = tagger.tag(words);
+   for (i in taggedWords) {
+     var tw = taggedWords[i];
+     if (!/[^a-zA-Z]/.test(tw[0])) {
+       //console.log(tw[0] + ' ' + tw[1]);
+       posArray[j] = tw[1];
+       j = j + 1;
+     }
+   }
+
+   //console.log('PosArray' + posArray);
    //Create a temp string initialized to ""
    //Keep appending words to this temp string.
    //Once we add the word we think is the end of the
@@ -56,7 +77,7 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
    var len = tokens.length;
 
    for (i = 0 ; i < len ; i++) {
-     temp = temp + ' ' + tokens[i];
+     temp = temp + tokens[i] + ' ';
      console.log(temp);
      // Handle cases where dot is my last character.
      if (isDotLastCharacter(tokens[i])) {
@@ -78,6 +99,9 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
          // Check if the next word starts with an upper case letter.
          // Most likely this word is the end of the sentence.
          var next = tokens[i+1];
+         if (!isNaN(next)) {
+           continue;
+         }
          // Quickly handle cases like "XYZ....right."
          if (next === ".") {
            continue;
@@ -94,6 +118,16 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
          }
 
          if (next[0].toUpperCase() == next[0]) {
+            //B.H.Obama was a great president
+            //Even though O is uppercase there is a relationship
+            //between the next token and the part of speech of the
+            //subsequent token.
+            if (posArray[i+2] === "VBZ" ||
+                posArray[i+2] === "VBD" ||
+                tokens[i+2] === "who" ||
+                tokens[i+2] === "whose") {
+              continue;
+            }
             results.push(temp);
             temp = "";
             continue;
