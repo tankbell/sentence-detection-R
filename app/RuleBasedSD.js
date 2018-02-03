@@ -125,7 +125,10 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
             if (posArray[i+2] === "VBZ" ||
                 posArray[i+2] === "VBD" ||
                 tokens[i+2] === "who" ||
-                tokens[i+2] === "whose") {
+                tokens[i+2] === "whose" ||
+                posArray[i+1] === "VBZ" ||
+                posArray[i+1] === "VBD" ||
+                posArray[i+1] === "CC") {
               continue;
             }
             results.push(temp);
