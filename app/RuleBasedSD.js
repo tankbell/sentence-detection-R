@@ -114,24 +114,31 @@ RuleBasedSentenceDetector.prototype.detect = function(para,
          // "I got for a walk at 5 A.M." , then this check would not be hit.
          // Instead the second rule will take care of that.
          // Another example : I train my bot using A.I.
-         if (next.length == 2 && next[0].toUpperCase() == next[0] && isDotLastCharacter(next)) {
+         if (next.length == 2 && next[0].toUpperCase() == next[0] && isDotLastCharacter(next) &&
+             tokens[i].length == 2 && tokens[i].toUpperCase() == tokens[i] && isDotLastCharacter(tokens[i])) {
            continue;
          }
 
          if (next[0].toUpperCase() == next[0]) {
-            //B.H.Obama was a great president
-            //Even though O is uppercase there is a relationship
-            //between the next token and the part of speech of the
-            //subsequent token.
-            if (posArray[i+2] === "VBZ" ||
-                posArray[i+2] === "VBD" ||
-                tokens[i+2] === "who" ||
-                tokens[i+2] === "whose" ||
-                posArray[i+1] === "VBZ" ||
-                posArray[i+1] === "VBD" ||
-                posArray[i+1] === "CC") {
+           //B.H.Obama was a great president
+           //Even though O is uppercase there is a relationship
+           //between the next token and the part of speech of the
+           //subsequent token.
+           if (posArray[i+2] === "VBZ" ||
+               posArray[i+2] === "VBD" ||
+               tokens[i+2] === "who" ||
+               tokens[i+2] === "whose") {
+             continue;
+           }
+            if (next.length == 2 && next[0].toUpperCase() == next[0] && isDotLastCharacter(next)) {
+              if (tokens[i].length <= 3) {
+                continue;
+              }
+              results.push(temp);
+              temp = "";
               continue;
             }
+
             results.push(temp);
             temp = "";
             continue;
